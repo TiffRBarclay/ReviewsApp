@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import * as Font from "expo-font";
 import { AppLoading } from "expo";
 import { NavigationContainer } from "@react-navigation/native";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 
-import HomeStack from "./routes/HomeStack";
+import DrawerContent from "./routes/DrawerContent";
 
 const getFonts = () => {
   return Font.loadAsync({
@@ -18,7 +19,7 @@ export default function App() {
   if (fontsLoaded) {
     return (
       <NavigationContainer>
-        <HomeStack />
+        <DrawerContent />
       </NavigationContainer>
     );
   } else {
