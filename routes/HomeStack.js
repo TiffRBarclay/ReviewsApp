@@ -1,24 +1,21 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 
+import Header from "../components/Header";
+
 import Home from "../screens/Home";
 import ReviewDetails from "../screens/ReviewDetails";
 
 const Stack = createStackNavigator();
 
-const HomeStack = () => (
-  <Stack.Navigator
-    screenOptions={{
-      headerTintColor: "#444",
-      headerStyle: {
-        backgroundColor: "#eee",
-      },
-    }}
-  >
+const HomeStack = (props) => (
+  <Stack.Navigator>
     <Stack.Screen
       name="Home"
       component={Home}
-      options={{ title: "Game Zone" }}
+      options={{
+        header: ({ navigation }) => <Header navigation={navigation} />,
+      }}
     />
     <Stack.Screen
       name="ReviewDetails"

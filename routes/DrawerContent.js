@@ -2,14 +2,14 @@ import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 
 import HomeStack from "./HomeStack";
-import About from "../screens/About";
+import AboutStack from "./AboutStack";
 
 const Drawer = createDrawerNavigator();
 
 const DrawerContent = () => (
   <Drawer.Navigator>
     <Drawer.Screen name="Home" children={HomeStack} />
-    <Drawer.Screen name="About" component={About} />
+    <Drawer.Screen name="About" children={AboutStack} />
   </Drawer.Navigator>
 );
 
